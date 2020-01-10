@@ -13,28 +13,39 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const db = wx.cloud.database({
-      env:'test1-0woef'
-    });
-    db.collection('picture')
-      .where({
-        type: 1
+      let arrayList = new Array();
+      for(let i =0;i<20;i++){
+          let o = new Object;
+          o.url = "cloud://test1-0woef.7465-test1-0woef-1300017080/img/chafen_yule.jpg";
+          o.text = "1234";
+          arrayList.push(o);
+      }
+      console.log(arrayList);
+      this.setData({
+          array: arrayList
       })
-      .limit(10)
-      .get().then(res=>{
-        this.setData({
-          array:res.data
-        })
-        console.log(res);
-      });
-    db.collection('button_list')
-      .orderBy('weight', 'asc')
-      .limit(10)
-      .get().then(res=>{
-        this.setData({
-          buttonList: res.data
-        })
-      });
+    // const db = wx.cloud.database({
+    //   env:'test1-0woef'
+    // });
+    // db.collection('picture')
+    //   .where({
+    //     type: 1
+    //   })
+    //   .limit(10)
+    //   .get().then(res=>{
+    //     this.setData({
+    //       array:res.data
+    //     })
+    //     console.log(res);
+    //   });
+    // db.collection('button_list')
+    //   .orderBy('weight', 'asc')
+    //   .limit(10)
+    //   .get().then(res=>{
+    //     this.setData({
+    //       buttonList: res.data
+    //     })
+    //   });
   },
 
   /**

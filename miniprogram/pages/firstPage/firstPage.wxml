@@ -1,11 +1,11 @@
 <!--miniprogram/pages/firstPage/firstPage.wxml-->
-<view class="container_rule" style="background:red">
-<view wx:for="{{buttonList}}" class="button_rule">
+<view class="container_rule" style="background:white">
+<!-- <view wx:for="{{buttonList}}" class="button_rule">
 <button type="primary">"{{item.name}}"</button>
+</view> -->
+<view wx:for="{{array}}" class="container_rule">
+<image src="{{item.url}}" class="button_rule"></image>
 </view>
-<!-- <view wx:for="{{array}}">
-<image src="{{item.url}}"></image>
-</view>
-<image src="cloud://test1-0woef.7465-test1-0woef-1300017080/img/page_3_1.jpg"></image> -->
+
 
 </view>

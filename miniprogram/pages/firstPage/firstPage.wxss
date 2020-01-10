@@ -2,8 +2,8 @@
 .button_rule{
   display: flex;
   flex-wrap: wrap;
-  width:325rpx;
-  height: 100rpx;
+  width:200rpx;
+  height: 200rpx;
   margin:25rpx 25rpx 25rpx 25rpx;
 }
 .container_rule{
