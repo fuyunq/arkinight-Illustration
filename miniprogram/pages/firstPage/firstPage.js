@@ -87,7 +87,16 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+      let list = this.data.array;
+      for (let i = 0; i < 10; i++) {
+          let o = new Object;
+          o.url = "cloud://test1-0woef.7465-test1-0woef-1300017080/img/chafen_yule.jpg";
+          o.text = "1234";
+          list.push(o);
+      }
+      this.setData({
+          array: list
+      })
   },
 
   /**

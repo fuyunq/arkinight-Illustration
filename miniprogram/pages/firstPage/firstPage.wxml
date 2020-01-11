@@ -3,8 +3,9 @@
 <!-- <view wx:for="{{buttonList}}" class="button_rule">
 <button type="primary">"{{item.name}}"</button>
 </view> -->
-<view wx:for="{{array}}" class="container_rule">
+<view wx:for="{{array}}" class="unit_container">
 <image src="{{item.url}}" class="button_rule"></image>
+<text>{{item.text}}</text>
 </view>
 
 
