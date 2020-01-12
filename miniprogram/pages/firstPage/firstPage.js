@@ -6,32 +6,33 @@ Page({
    */
   data: {
     array:[],
-    buttonList:[]
+    buttonList:[],
+    currentPage:0,
+    isLoading:false,
+    lastSortId:0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      let arrayList = new Array();
-      for(let i =0;i<20;i++){
-          let o = new Object;
-          o.url = "cloud://test1-0woef.7465-test1-0woef-1300017080/img/chafen_yule.jpg";
-          o.text = "1234";
-          arrayList.push(o);
-      }
-      console.log(arrayList);
-      this.setData({
-          array: arrayList
-      })
+      // let arrayList = new Array();
+      // for(let i =0;i<20;i++){
+      //     let o = new Object;
+      //     o.url = "cloud://test1-0woef.7465-test1-0woef-1300017080/img/chafen_yule.jpg";
+      //     o.text = "1234";
+      //     arrayList.push(o);
+      // }
+      // console.log(arrayList);
+      // this.setData({
+      //     array: arrayList
+      // })
     // const db = wx.cloud.database({
-    //   env:'test1-0woef'
+    //   env:'test1-s9ptf'
     // });
-    // db.collection('picture')
-    //   .where({
-    //     type: 1
-    //   })
-    //   .limit(10)
+    // db.collection('people_info')
+    //   .limit(21)
+    //   .orderBy('sort_id','asc')
     //   .get().then(res=>{
     //     this.setData({
     //       array:res.data
@@ -46,6 +47,7 @@ Page({
     //       buttonList: res.data
     //     })
     //   });
+    this.setIcon();
   },
 
   /**
@@ -87,16 +89,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-      let list = this.data.array;
-      for (let i = 0; i < 10; i++) {
-          let o = new Object;
-          o.url = "cloud://test1-0woef.7465-test1-0woef-1300017080/img/chafen_yule.jpg";
-          o.text = "1234";
-          list.push(o);
-      }
-      this.setData({
-          array: list
-      })
+    this.setIcon();
   },
 
   /**
@@ -104,5 +97,35 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  setIcon:function(){
+    let loading = this.data.isLoading;
+    if (loading){
+      return;
+    }
+    let lastId = this.data.lastSortId;
+    const db = wx.cloud.database({
+      env: 'test1-s9ptf'
+    });
+    let arrayList = this.data.array;
+    const _ = db.command
+    db.collection('people_info')
+    .where({
+      sort_id: _.gt(lastId)
+    })
+      .limit(15)
+      .orderBy('sort_id', 'asc')
+      .get().then(res => {
+        let list = res.data;
+        if(list.length>0){
+          lastId = list[list.length-1].sort_id;
+        }
+        arrayList = arrayList.concat(list);
+        this.setData({
+          array: arrayList,
+          lastSortId:lastId
+        })
+        console.log(arrayList);
+      });
   }
 })
