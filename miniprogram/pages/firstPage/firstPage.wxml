@@ -3,7 +3,7 @@
 <!-- <view wx:for="{{buttonList}}" class="button_rule">
 <button type="primary">"{{item.name}}"</button>
 </view> -->
-<view wx:for="{{array}}" class="unit_container" bindtap="touchPeople" data-sort_id="{{item.sort_id}}">
+<view wx:for="{{array}}" class="unit_container" bindtap="touchPeople" data-name="{{item.cn}}">
 <image src="{{item.icon}}" class="icon_img"></image>
 <text>{{item.cn}}</text>
 </view>

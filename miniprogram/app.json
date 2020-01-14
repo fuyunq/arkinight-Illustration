@@ -33,7 +33,7 @@
                 "selectedIconPath": "images/search-selected.png"
             },
             {
-                "pagePath": "pages/peopleDetail/peopleDetail",
+                "pagePath": "pages/userConsole/userConsole",
                 "text": "设置",
                 "iconPath": "images/settings.png",
                 "selectedIconPath": "images/settings-selected.png"

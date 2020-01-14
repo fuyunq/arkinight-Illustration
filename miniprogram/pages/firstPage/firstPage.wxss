@@ -2,7 +2,7 @@
 .icon_img{
   width:180rpx;
   height: 180rpx;
-  margin:25rpx 50rpx 0rpx 50rpx;
+  margin:25rpx 35rpx 0rpx 35rpx;
 }
 .container_rule{
 display: flex;
@@ -12,6 +12,6 @@ flex-wrap: wrap;
     display: flex;
     flex-wrap: wrap;
     width:250rpx;
-  height: 250rpx;
+  height: 230rpx;
   justify-content:center;
 }

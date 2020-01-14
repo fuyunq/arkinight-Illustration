@@ -1,5 +1,6 @@
 <!--miniprogram/pages/peopleDetail/peopleDetail.wxml-->
-<text>miniprogram/pages/peopleDetail/peopleDetail.wxml</text>
+
+<view>{{desc}}</view>
 <view class="table">
     <view class="table-tr">
         <view class="table-th">省份/直辖市</view>

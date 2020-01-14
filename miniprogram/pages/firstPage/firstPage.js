@@ -144,9 +144,9 @@ Page({
   },
   touchPeople:function(event){
       console.log(event);
-      let sortId = event.currentTarget.dataset.sort_id;
+      let sortId = event.currentTarget.dataset.name;
       wx.navigateTo({
-          url: "../../pages/peopleDetail/peopleDetail?sortId=" + sortId,
+          url: "../../pages/peopleDetail/peopleDetail?name=" + sortId,
       });
   }
 })

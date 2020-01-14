@@ -6,14 +6,28 @@ Page({
    */
   data: {
       peopleDetail:null,
+      desc:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      let sortId = options.sortId;
-
+      let cn = options.name;
+    const db = wx.cloud.database({
+      env: 'test1-s9ptf'
+    });
+    db.collection('character')
+      .where({
+        name: cn
+      })
+      .limit(1)
+      .get().then(res => {
+        console.log(res);
+        this.setData({
+          desc:res.data[0].itemDesc
+        })
+      });
   },
 
   /**
