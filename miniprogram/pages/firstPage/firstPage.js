@@ -127,5 +127,12 @@ Page({
         })
         console.log(arrayList);
       });
+  },
+  touchPeople:function(event){
+      console.log(event);
+      let sortId = event.currentTarget.dataset.sort_id;
+      wx.navigateTo({
+          url: "../../pages/peopleDetail/peopleDetail?sortId=" + sortId,
+      });
   }
 })

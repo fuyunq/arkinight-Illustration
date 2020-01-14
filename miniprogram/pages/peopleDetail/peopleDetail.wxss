@@ -1,1 +1,29 @@
 /* miniprogram/pages/peopleDetail/peopleDetail.wxss */
+
+.table, .table div {
+    margin: 0 auto;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-tr {
+    display: table-row;
+}
+
+.table-th {
+    display: table-cell;
+    border: 1rpx solid gray;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-td {
+    display: table-cell;
+    border: 1rpx solid gray;
+    text-align: center;
+    vertical-align: middle;
+}
