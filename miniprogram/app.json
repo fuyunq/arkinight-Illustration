@@ -1,28 +1,52 @@
 {
-  "pages": [
-    "pages/firstPage/firstPage",
-    "pages/index/index",
-    "pages/userConsole/userConsole",
-    "pages/storageConsole/storageConsole",
-    "pages/databaseGuide/databaseGuide",
-    "pages/addFunction/addFunction",
-    "pages/deployFunctions/deployFunctions",
-    "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi",
-    "pages/openapi/serverapi/serverapi",
-    "pages/openapi/callback/callback",
-    "pages/openapi/cloudid/cloudid",
-    "pages/im/im",
-    "pages/im/room/room",
-    "pages/peopleDetail/peopleDetail"
-  ],
-  "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
-  },
-  "sitemapLocation": "sitemap.json",
-  "style": "v2"
+    "pages": [
+        "pages/firstPage/firstPage",
+        "pages/index/index",
+        "pages/userConsole/userConsole",
+        "pages/storageConsole/storageConsole",
+        "pages/databaseGuide/databaseGuide",
+        "pages/addFunction/addFunction",
+        "pages/deployFunctions/deployFunctions",
+        "pages/chooseLib/chooseLib",
+        "pages/openapi/openapi",
+        "pages/openapi/serverapi/serverapi",
+        "pages/openapi/callback/callback",
+        "pages/openapi/cloudid/cloudid",
+        "pages/im/im",
+        "pages/im/room/room",
+        "pages/peopleDetail/peopleDetail"
+    ],
+    "tabBar": {
+        "backgroundColor": "#F7F7FA",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/firstPage/firstPage",
+                "text": "单词",
+                "iconPath": "images/home.png",
+                "selectedIconPath": "images/home-selected.png"
+            },
+            {
+                "pagePath": "pages/index/index",
+                "text": "辞典",
+                "iconPath": "images/search.png",
+                "selectedIconPath": "images/search-selected.png"
+            },
+            {
+                "pagePath": "pages/peopleDetail/peopleDetail",
+                "text": "设置",
+                "iconPath": "images/settings.png",
+                "selectedIconPath": "images/settings-selected.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarTitleText": "云开发 QuickStart",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
 }

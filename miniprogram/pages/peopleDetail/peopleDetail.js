@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      peopleDetail:null,
   },
 
   /**
@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
       let sortId = options.sortId;
-      
+
   },
 
   /**
