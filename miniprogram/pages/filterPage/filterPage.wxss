@@ -43,7 +43,7 @@ margin-left:20rpx
     display: flex;
 width: 750rpx;
 height: 50rpx;
-background: yellow;
+background: #CCFF99;
 justify-content:center;
 }
 .table_choose{
