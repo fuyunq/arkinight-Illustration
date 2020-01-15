@@ -1,0 +1,55 @@
+/* miniprogram/pages/filterPage/filterPage.wxss */
+checkbox .wx-checkbox-input{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx; /* 背景的宽 */
+   height: 40rpx; /* 背景的高 */
+   
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input {
+	width: 34rpx;
+	height: 34rpx;
+	border-radius: 50%;
+}
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #0394F0;
+  border-color:#0394F0;
+}
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 20rpx;
+  height: 20rpx;  
+  line-height: 20rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #fff;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.unit_label{
+margin-top:0rpx;
+margin-right:20rpx;
+margin-bottom:0rpx;
+margin-left:20rpx
+}
+.group_box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap
+}
+.table_text{
+    display: flex;
+width: 750rpx;
+height: 50rpx;
+background: yellow;
+justify-content:center;
+}
+.table_choose{
+    display: flex;
+width: 750rpx;
+height: 50rpx;
+background: white;
+justify-content:center;
+}

@@ -1,6 +1,6 @@
 {
     "pages": [
-        "pages/firstPage/firstPage",
+        "pages/filterPage/filterPage",
         "pages/index/index",
         "pages/userConsole/userConsole",
         "pages/storageConsole/storageConsole",
@@ -14,7 +14,8 @@
         "pages/openapi/cloudid/cloudid",
         "pages/im/im",
         "pages/im/room/room",
-        "pages/peopleDetail/peopleDetail"
+        "pages/peopleDetail/peopleDetail",
+        "pages/firstPage/firstPage"
     ],
     "tabBar": {
         "backgroundColor": "#F7F7FA",
@@ -41,9 +42,9 @@
         ]
     },
     "window": {
-        "backgroundColor": "#F6F6F6",
+        "backgroundColor": "#FFFFFF",
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#F6F6F6",
+        "navigationBarBackgroundColor": "#FFFFFF",
         "navigationBarTitleText": "云开发 QuickStart",
         "navigationBarTextStyle": "black"
     },

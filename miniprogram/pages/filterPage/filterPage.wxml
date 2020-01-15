@@ -1,0 +1,12 @@
+<!--miniprogram/pages/filterPage/filterPage.wxml-->
+<view class="table_text">
+<text>阻挡数</text>
+</view>
+<view class="table_choose">
+<checkbox-group bindchange="checkboxChange" class="group_box">
+<label class="unit_label" wx:for="{{firstChooseGroup}}">
+    <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+  </label>
+</checkbox-group>
+</view>
+

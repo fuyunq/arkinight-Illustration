@@ -1,5 +1,5 @@
 <!--miniprogram/pages/firstPage/firstPage.wxml-->
-<view class="container_rule" style="background:white">
+<view class="container_rule">
 <!-- <view wx:for="{{buttonList}}" class="button_rule">
 <button type="primary">"{{item.name}}"</button>
 </view> -->

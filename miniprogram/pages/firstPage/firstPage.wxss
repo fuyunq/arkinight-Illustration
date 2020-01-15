@@ -1,12 +1,18 @@
 /* miniprogram/pages/firstPage/firstPage.wxss */
+page{
+  background-color: #b0b3a500;
+}
 .icon_img{
   width:180rpx;
   height: 180rpx;
   margin:25rpx 35rpx 0rpx 35rpx;
+  border-radius: 35rpx;
+  background-color: #99CCCC;
 }
 .container_rule{
 display: flex;
 flex-wrap: wrap;
+background: #FFFFCC;
 }
 .unit_container{
     display: flex;
