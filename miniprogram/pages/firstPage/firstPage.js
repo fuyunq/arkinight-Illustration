@@ -9,7 +9,10 @@ Page({
     buttonList:[],
     currentPage:0,
     isLoading:false,
-    lastSortId:0
+    lastSortId:999,
+    type:'all',
+    classList: ['all', '近卫', '狙击', '重装', '特种', '医疗', '先锋','术师' ],
+    classSelect:'all'
   },
 
   /**
@@ -61,7 +64,7 @@ Page({
     //       buttonList: res.data
     //     })
     //   });
-    this.setIcon();
+    this.setIcon(this.data.classSelect,true);
   },
 
   /**
@@ -103,7 +106,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.setIcon();
+    this.setIcon(this.data.classSelect,false);
   },
 
   /**
@@ -112,29 +115,56 @@ Page({
   onShareAppMessage: function () {
 
   },
-  setIcon:function(){
+  setIcon:function(className,needClean){
+    console.log('开始读取');
+    console.log(className);
+    console.log(needClean);
     let loading = this.data.isLoading;
     if (loading){
       return;
     }
     let lastId = this.data.lastSortId;
+    console.log(lastId);
     const db = wx.cloud.database({
       env: 'test1-s9ptf'
     });
     let arrayList = this.data.array;
-    const _ = db.command
-    db.collection('people_info')
-    .where({
-      sort_id: _.gt(lastId)
-    })
+    const _ = db.command;
+    let testDb = null;
+    if(className=='all'){
+      testDb = db.collection('people_info')
+        .where({
+          sort_id: _.lt(lastId),
+        });
+    }else{
+      testDb = db.collection('people_info')
+        .where({
+          sort_id: _.lt(lastId),
+          class: className
+        });
+    }
+    
+    // db.collection('people_info')
+    // .where({
+    //   sort_id: _.gt(lastId),
+    //   class: '近卫'
+    // })
+    testDb
       .limit(15)
-      .orderBy('sort_id', 'asc')
+      .orderBy('sort_id', 'desc')
       .get().then(res => {
+        console.log('返回值');
+        console.log(res);
         let list = res.data;
         if(list.length>0){
           lastId = list[list.length-1].sort_id;
         }
-        arrayList = arrayList.concat(list);
+        if(needClean){
+          arrayList = list;
+        }else{
+          arrayList = arrayList.concat(list);
+        }
+        
         this.setData({
           array: arrayList,
           lastSortId:lastId
@@ -148,5 +178,16 @@ Page({
       wx.navigateTo({
           url: "../../pages/peopleDetail/peopleDetail?name=" + sortId,
       });
+  },
+  chooseClass:function(event){
+    this.setData({
+      lastSortId:999
+    })
+      console.log(event);
+      let className = event.currentTarget.dataset.name;
+      this.setData({
+        classSelect:className
+      })
+    this.setIcon(className,true);
   }
 })

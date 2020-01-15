@@ -1,5 +1,6 @@
 {
     "pages": [
+      "pages/firstPage/firstPage",
         "pages/filterPage/filterPage",
         "pages/index/index",
         "pages/userConsole/userConsole",
@@ -14,8 +15,7 @@
         "pages/openapi/cloudid/cloudid",
         "pages/im/im",
         "pages/im/room/room",
-        "pages/peopleDetail/peopleDetail",
-        "pages/firstPage/firstPage"
+        "pages/peopleDetail/peopleDetail"
     ],
     "tabBar": {
         "backgroundColor": "#F7F7FA",
@@ -48,6 +48,5 @@
         "navigationBarTitleText": "云开发 QuickStart",
         "navigationBarTextStyle": "black"
     },
-    "sitemapLocation": "sitemap.json",
-    "style": "v2"
+    "sitemapLocation": "sitemap.json"
 }

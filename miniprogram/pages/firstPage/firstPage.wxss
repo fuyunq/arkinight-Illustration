@@ -21,3 +21,12 @@ background: #FFFFCC;
   height: 230rpx;
   justify-content:center;
 }
+.choose_button{
+background: #99CCCC;
+width: 187.5rpx
+}
+.choose_button_box{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
