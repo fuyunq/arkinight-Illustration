@@ -7,7 +7,9 @@ Page({
   data: {
       peopleDetail:null,
       desc:'',
+      stageList:[]
       
+
   },
 
   /**
