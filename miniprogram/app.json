@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/peopleDetail/peopleDetail",
       "pages/firstPage/firstPage",
         "pages/filterPage/filterPage",
         "pages/index/index",
@@ -14,8 +15,8 @@
         "pages/openapi/callback/callback",
         "pages/openapi/cloudid/cloudid",
         "pages/im/im",
-        "pages/im/room/room",
-        "pages/peopleDetail/peopleDetail"
+        "pages/im/room/room"
+        
     ],
     "tabBar": {
         "backgroundColor": "#F7F7FA",

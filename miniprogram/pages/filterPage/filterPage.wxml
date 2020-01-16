@@ -10,7 +10,17 @@
 </checkbox-group>
 </view>
 <view class="table_text">
-<text>阻挡数</text>
+<text>伤害类型</text>
+</view>
+<view class="table_choose">
+<checkbox-group bindchange="checkboxChange" class="group_box">
+<label class="unit_label" wx:for="{{firstChooseGroup}}">
+    <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
+  </label>
+</checkbox-group>
+</view>
+<view class="table_text">
+<text>攻击方式</text>
 </view>
 <view class="table_choose">
 <checkbox-group bindchange="checkboxChange" class="group_box">
@@ -30,7 +40,7 @@
 </checkbox-group>
 </view>
 <view class="table_text">
-<text>阻挡数</text>
+<text>阵营</text>
 </view>
 <view class="table_choose">
 <checkbox-group bindchange="checkboxChange" class="group_box">
@@ -40,17 +50,7 @@
 </checkbox-group>
 </view>
 <view class="table_text">
-<text>阻挡数</text>
-</view>
-<view class="table_choose">
-<checkbox-group bindchange="checkboxChange" class="group_box">
-<label class="unit_label" wx:for="{{firstChooseGroup}}">
-    <checkbox value="{{item.value}}" checked="{{item.checked}}"/>{{item.name}}
-  </label>
-</checkbox-group>
-</view>
-<view class="table_text">
-<text>阻挡数</text>
+<text>星级</text>
 </view>
 <view class="table_choose">
 <checkbox-group bindchange="checkboxChange" class="group_box">

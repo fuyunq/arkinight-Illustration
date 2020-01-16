@@ -1,7 +1,11 @@
 <!--miniprogram/pages/peopleDetail/peopleDetail.wxml-->
 
-<view>{{desc}}</view>
-<view class="table">
+<view class="choose_image_button_contain">
+        <image src="cloud://test1-s9ptf.7465-test1-s9ptf-1300138191/common/stage0.jpeg" class="choose_image_button"></image>
+        <image src="cloud://test1-s9ptf.7465-test1-s9ptf-1300138191/common/stage1.jpeg" class="choose_image_button"></image>
+        <image src="cloud://test1-s9ptf.7465-test1-s9ptf-1300138191/common/stage2.jpeg" class="choose_image_button"></image>
+</view>
+<!-- <view class="table">
     <view class="table-tr">
         <view class="table-th">省份/直辖市</view>
         <view class="table-th">GDP</view>
@@ -22,4 +26,4 @@
         <view class="table-td">70116</view>
         <view class="table-td">8.5%</view>
     </view>
-</view>
+</view> -->

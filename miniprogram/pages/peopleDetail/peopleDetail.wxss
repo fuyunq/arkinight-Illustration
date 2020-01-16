@@ -1,6 +1,24 @@
 /* miniprogram/pages/peopleDetail/peopleDetail.wxss */
 
-.table, .table div {
+choose_image_button_contain{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 750rpx;
+    height: 50rpx;
+}
+.choose_image_button_unit{
+}
+.choose_image_button{
+width: 216rpx;
+height: 78rpx;
+}
+.choose_text{
+    color: white;
+    width: 100rpx;
+    height: 50rpx;
+}
+/* .table, .table div {
     margin: 0 auto;
 }
 
@@ -26,4 +44,4 @@
     border: 1rpx solid gray;
     text-align: center;
     vertical-align: middle;
-}
+} */

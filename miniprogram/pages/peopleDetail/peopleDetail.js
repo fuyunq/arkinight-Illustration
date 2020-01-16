@@ -6,7 +6,8 @@ Page({
    */
   data: {
       peopleDetail:null,
-      desc:''
+      desc:'',
+      
   },
 
   /**
