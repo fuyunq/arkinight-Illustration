@@ -5,10 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
+      peopleImageState:false,
+      peopleImageButton:'展开',
       peopleDetail:null,
       desc:'',
       stageList:[]
-      
+
 
   },
 
@@ -80,5 +82,19 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  touchPeopleImage:function(){
+      if (this.data.peopleImageState){
+          this.setData({
+              peopleImageState: !this.data.peopleImageState,
+              peopleImageButton:'展开'
+          })
+      }else{
+          this.setData({
+              peopleImageState: !this.data.peopleImageState,
+              peopleImageButton: '收起'
+          })
+      }
+      
   }
 })

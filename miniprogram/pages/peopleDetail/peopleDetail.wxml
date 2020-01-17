@@ -1,13 +1,28 @@
 <!--miniprogram/pages/peopleDetail/peopleDetail.wxml-->
 
 <view class="line"></view>
-<view>
-<text>立绘</text>
+<view class="unit_box">
+    <view class="text_box">
+        <text>立绘</text>
+    </view>
+    <view class="empty_box"></view>
+    <view class="button_box">
+        <button class="choose_button" size="mini" bindtap="touchPeopleImage" >{{peopleImageButton}}</button>
+    </view>
 </view>
 <view class="line"></view>
-<view><text>立绘</text>
+<view class="unit_box">
+    <view class="text_box">
+        <text>立绘</text>
+    </view>
+    <view class="empty_box"></view>
+    <view class="button_box">
+        <button class="choose_button" size="mini">展开</button>
+    </view>
 </view>
-<view class="line"></view>
+<view class="selected_button"><text>12314</text></view> 
+
+
 <!-- <view class="table">
     <view class="table-tr">
         <view class="table-th">省份/直辖市</view>
