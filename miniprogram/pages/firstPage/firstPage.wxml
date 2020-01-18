@@ -6,7 +6,7 @@
 <view class="choose_button_box">
 <button class="choose_button" wx:for="{{classList}}" data-name="{{item}}" bindtap="chooseClass">{{item}}</button>
 </view>
-<view wx:for="{{array}}" class="unit_container" bindtap="touchPeople" data-name="{{item.cn}}">
+<view wx:for="{{array}}" class="unit_container" bindtap="touchPeople" data-name="{{item.cn}}"data-icon="{{item.icon}}">
 <image src="{{item.icon}}" class="icon_img"></image>
 <text>{{item.cn}}</text>
 </view>

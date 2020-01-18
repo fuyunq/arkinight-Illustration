@@ -175,8 +175,9 @@ Page({
   touchPeople:function(event){
       console.log(event);
       let sortId = event.currentTarget.dataset.name;
+    let icon = event.currentTarget.dataset.icon;
       wx.navigateTo({
-          url: "../../pages/peopleDetail/peopleDetail?name=" + sortId,
+          url: "../../pages/peopleDetail/peopleDetail?name=" + sortId+'&icon='+icon,
       });
   },
   chooseClass:function(event){

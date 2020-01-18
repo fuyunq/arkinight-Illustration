@@ -9,7 +9,12 @@ background-color: #D8D8D8;
 .unit_box{
     display: flex;
     width: 750rpx;
-    height: 120rpx;
+    flex-flow: wrap;
+}
+.top_box{
+    display: flex;
+    width: 250rpx;
+    flex-flow: wrap;
 }
 .text_box{
     width: 300rpx;
@@ -56,7 +61,23 @@ height: 400rpx;
   background: initial;
   
 }
-/* .table, .table div {
+.people_image{
+  width: 750rpx;
+  height: 750rpx;
+}
+.top_table{
+  display: flex;
+  width: 750rpx;
+  flex-wrap: wrap;
+}
+.icon_img{
+  width:180rpx;
+  height: 180rpx;
+  margin:0rpx 35rpx 0rpx 35rpx;
+  border-radius: 35rpx;
+  background-color: #99CCCC;
+}
+.table,table1, .table div {
     margin: 0 auto;
 }
 
@@ -66,6 +87,11 @@ height: 400rpx;
     border-collapse: collapse;
 }
 
+.table1 {
+    display: table;
+    width: 500rpx;
+    border-collapse: collapse;
+}
 .table-tr {
     display: table-row;
 }
@@ -75,6 +101,7 @@ height: 400rpx;
     border: 1rpx solid gray;
     text-align: center;
     vertical-align: middle;
+    
 }
 
 .table-td {
@@ -82,4 +109,5 @@ height: 400rpx;
     border: 1rpx solid gray;
     text-align: center;
     vertical-align: middle;
-} */
+    min-width:150rpx;
+}

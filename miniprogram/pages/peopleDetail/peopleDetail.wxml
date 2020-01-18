@@ -1,47 +1,97 @@
-<!--miniprogram/pages/peopleDetail/peopleDetail.wxml-->
+<view class="top_table">
+  <view class="top_box">
+    <image src="{{icon}}" class="icon_img"></image>
+    <text>点击查看大图</text>
+  </view>
+  <view class="table1">
+    <view class="table-tr">
+      <view class="table-td">
+        姓名
+      </view>
+      <view class="table-td">年</view>
 
-<view class="line"></view>
-<view class="unit_box">
+    </view>
+    <view class="table-tr">
+      <view class="table-td">标签</view>
+      <view class="table-td">37010</view>
+    </view>
+    <view class="table-tr">
+      <view class="table-td">职业</view>
+      <view class="table-td">70116</view>
+    </view>
+    <view class="table-tr">
+      <view class="table-td">星级</view>
+      <view class="table-td">6</view>
+    </view>
+  </view>
+
+  <view class="unit_box">
     <view class="text_box">
-        <text>立绘</text>
+      <text>天赋</text>
     </view>
     <view class="empty_box"></view>
     <view class="button_box">
-        <button class="choose_button" size="mini" bindtap="touchPeopleImage" >{{peopleImageButton}}</button>
+      <button class="choose_button" size="mini" bindtap="touchTalentImage">{{talentButton}}</button>
     </view>
+  </view>
+
+  <view class="table" wx:if="{{talentState}}">
+    <view class="table-tr">
+      <view class="table-td">天赋名称 </view>
+      <view class="table-td">开放条件</view>
+      <view class="table-td">效果</view>
+    </view>
+    <view class="table-tr" wx:for="{{talentList}}">
+      <view class="table-td">{{item.name}}</view>
+      <view class="table-td">{{item.quire}}</view>
+      <view class="table-td">{{item.desc}}</view>
+    </view>
+  </view>
+
+
+  <view class="line"></view>
+
+
+  <view class="table">
+    <view class="table-tr">
+      <view class="table-td"> </view>
+      <view class="table-td">精英1满级</view>
+      <view class="table-td">精英2满级</view>
+      <view class="table-td">信赖加成</view>
+    </view>
+    <view class="table-tr">
+      <view class="table-td">生命上限</view>
+      <view class="table-td">{{peopleDetail.phases[1].attributesKeyFrames[1].data.maxHp}}</view>
+      <view class="table-td">{{peopleDetail.phases[2].attributesKeyFrames[1].data.maxHp}}</view>
+      <view class="table-td">{{peopleDetail.favorKeyFrames[1].data.maxHp}}</view>
+    </view>
+    <view class="table-tr">
+      <view class="table-td">攻击</view>
+      <view class="table-td">{{peopleDetail.phases[1].attributesKeyFrames[1].data.atk}}</view>
+      <view class="table-td">{{peopleDetail.phases[2].attributesKeyFrames[1].data.atk}}</view>
+      <view class="table-td">{{peopleDetail.favorKeyFrames[1].data.atk}}</view>
+    </view>
+    <view class="table-tr">
+      <view class="table-td">防御</view>
+      <view class="table-td">{{peopleDetail.phases[1].attributesKeyFrames[1].data.def}}</view>
+      <view class="table-td">{{peopleDetail.phases[2].attributesKeyFrames[1].data.def}}</view>
+      <view class="table-td">{{peopleDetail.favorKeyFrames[1].data.def}}</view>
+    </view>
+    <view class="table-tr">
+      <view class="table-td">法术抗性</view>
+      <view class="table-td">{{peopleDetail.phases[1].attributesKeyFrames[1].data.magicResistance}}</view>
+      <view class="table-td">{{peopleDetail.phases[2].attributesKeyFrames[1].data.magicResistance}}</view>
+      <view class="table-td">{{peopleDetail.favorKeyFrames[1].data.magicResistance}}</view>
+    </view>
+  </view>
 </view>
-<view class="line"></view>
+<!-- <view class="line"></view>
 <view class="unit_box">
-    <view class="text_box">
-        <text>立绘</text>
-    </view>
-    <view class="empty_box"></view>
-    <view class="button_box">
-        <button class="choose_button" size="mini">展开</button>
-    </view>
-</view>
-<view class="selected_button"><text>12314</text></view> 
-
-
-<!-- <view class="table">
-    <view class="table-tr">
-        <view class="table-th">省份/直辖市</view>
-        <view class="table-th">GDP</view>
-        <view class="table-th">增长率</view>
-    </view>
-    <view class="table-tr">
-        <view class="table-td">广东</view>
-        <view class="table-td">72812456</view>
-        <view class="table-td">8.0%</view>
-    </view>
-    <view class="table-tr">
-        <view class="table-td">河南</view>
-        <view class="table-td">37010</view>
-        <view class="table-td">8.3%</view>
-    </view>
-    <view class="table-tr">
-        <view class="table-td">江苏</view>
-        <view class="table-td">70116</view>
-        <view class="table-td">8.5%</view>
-    </view>
+  <view class="text_box">
+    <text>立绘</text>
+  </view>
+  <view class="empty_box"></view>
+  <view class="button_box">
+    <button class="choose_button" size="mini">展开</button>
+  </view>
 </view> -->

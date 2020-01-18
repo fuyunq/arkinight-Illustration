@@ -5,11 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
+    baseInfo:{},
       peopleImageState:false,
       peopleImageButton:'展开',
       peopleDetail:null,
       desc:'',
-      stageList:[]
+      stageList:['初始','精英1','精英2'],
+    peopleImageList:[],
+    icon:'',
+    talentList:[],
+    talentState:false,
+    talentButton:'展开',
+    shuxin:false,
+    name:''
 
 
   },
@@ -18,7 +26,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // options.name =  '12F';
       let cn = options.name;
+    let icon = options.icon;
+    this.setData({
+      icon:icon
+    })
     const db = wx.cloud.database({
       env: 'test1-s9ptf'
     });
@@ -30,9 +43,31 @@ Page({
       .get().then(res => {
         console.log(res);
         this.setData({
-          desc:res.data[0].itemDesc
+          desc:res.data[0].itemDesc,
+          peopleDetail:res.data[0]
         })
       });
+    db.collection('character_img').where({
+      cn:cn
+    }).limit(1)
+    .get().then(res=>{
+      console.log(res);
+      let imgList = new Array();
+      if (res.data[0].stage0){
+        imgList.push(res.data[0].stage0)
+      }
+      if (res.data[0].stage1) {
+        imgList.push(res.data[0].stage1)
+      }
+      if (res.data[0].stage2) {
+        imgList.push(res.data[0].stage2)
+      }
+      console.log(imgList);
+      this.setData({
+        peopleImageList: imgList,
+        name:cn
+      })
+    })
   },
 
   /**
@@ -83,16 +118,32 @@ Page({
   onShareAppMessage: function () {
 
   },
-  touchPeopleImage:function(){
+  touchTalentImage:function(){
+    this.setData({
+      shuxin:!this.data.shuxin
+    })
+    wx.cloud.callFunction({
+      // 云函数名称
+      name: 'getTalentList',
+      // 传给云函数的参数
+      data: {
+        name:this.data.name
+      }
+    }).then(res=>{
+      this.setData({
+        talentList:res.result.talentList
+      })
+      console.log(res);
+    })
       if (this.data.peopleImageState){
           this.setData({
-              peopleImageState: !this.data.peopleImageState,
-              peopleImageButton:'展开'
+            talentState: !this.data.talentState,
+              talentButton:'展开'
           })
       }else{
           this.setData({
-              peopleImageState: !this.data.peopleImageState,
-              peopleImageButton: '收起'
+            talentState: !this.data.talentState,
+              talentButton: '收起'
           })
       }
       
