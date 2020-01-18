@@ -34,6 +34,10 @@
       <button class="choose_button" size="mini" bindtap="touchTalentImage">{{talentButton}}</button>
     </view>
   </view>
+  
+  <view class="empty_area"></view>
+  <view class="line"></view>
+  <view class="empty_area"></view>
 
   <view class="table" wx:if="{{talentState}}">
     <view class="table-tr">
@@ -48,8 +52,29 @@
     </view>
   </view>
 
-
+  <view class="empty_area"></view>
   <view class="line"></view>
+  <view class="empty_area"></view>
+
+<view class="unit_box">
+    <view class="text_box">
+      <text>技能信息</text>
+    </view>
+    <view class="empty_box"></view>
+    <view class="button_box">
+      <button class="choose_button" size="mini" bindtap="touchTalentImage">{{talentButton}}</button>
+    </view>
+  </view>
+
+  <view class="unit_box">
+    <view class="text_box">
+      <text>属性</text>
+    </view>
+    <view class="empty_box"></view>
+    <view class="button_box">
+      <button class="choose_button" size="mini" bindtap="touchTalentImage">{{talentButton}}</button>
+    </view>
+  </view>
 
 
   <view class="table">

@@ -6,6 +6,12 @@ width: 750rpx;
 height: 3rpx;
 background-color: #D8D8D8;
 }
+.empty_area{
+margin: 0 auto;
+width: 750rpx;
+height: 5rpx;
+background-color:white;
+}
 .unit_box{
     display: flex;
     width: 750rpx;
