@@ -52,15 +52,6 @@ background-color:white;
 
 visibility:hidden;
 }
-.no_selected_button::after{
-    border-bottom-width: 3rpx; 
-    /* border-width:3rpx; */
-border-color: #D8D8D8;
-border-top-width: 0rpx;
-background: initial;
-width: 300rpx;
-height: 400rpx;
-}
 .choose_button{
     border-width:3rpx;
   border-color:black;
@@ -115,5 +106,5 @@ height: 400rpx;
     border: 1rpx solid gray;
     text-align: center;
     vertical-align: middle;
-    min-width:150rpx;
+    min-width:160rpx;
 }
