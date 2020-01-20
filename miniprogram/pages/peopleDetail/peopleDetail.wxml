@@ -1,27 +1,49 @@
-<view class="top_table">
-  <view class="top_box">
-    <image src="{{icon}}" class="icon_img"></image>
-    <text>点击查看大图</text>
-  </view>
-  <view class="table1">
-    <view class="table-tr">
-      <view class="table-td">
-        姓名
-      </view>
-      <view class="table-td">年</view>
+<view class="default_view">
+  <view class="table">
+    <view class="table-th" style="width:250rpx;height:210rpx;">
+      <image src="{{icon}}" class="icon_img"></image>
+      <!-- <text style="font-size:30rpx;">点击查看大图</text> -->
+    </view>
 
-    </view>
-    <view class="table-tr">
-      <view class="table-td">标签</view>
-      <view class="table-td">37010</view>
-    </view>
-    <view class="table-tr">
-      <view class="table-td">职业</view>
-      <view class="table-td">70116</view>
-    </view>
-    <view class="table-tr">
-      <view class="table-td">星级</view>
-      <view class="table-td">6</view>
+    <view class="table" style="width:500rpx;height:210rpx;">
+      <view class="table-tr">
+        <view class="sub_table">
+          <view class="sub-table-tr">
+            <view class="table-th" style="width:100rpx">姓名</view>
+            <view class="table-th" style="width:150rpx">{{peopleDetail.cn}}</view>
+            <view class="table-th" style="width:100rpx">职业</view>
+            <view class="table-th" style="width:150rpx">{{peopleDetail.class}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="table-tr">
+        <view class="sub_table">
+          <view class="sub-table-tr">
+            <view class="table-th" style="width:100rpx">星级</view>
+            <view class="table-th" style="width:150rpx">{{peopleDetail.rarity}}</view>
+            <view class="table-th" style="width:100rpx">阵营</view>
+            <view class="table-th" style="width:150rpx">{{peopleDetail.camp}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="table-tr">
+        <view class="sub_table">
+          <view class="sub-table-tr">
+            <view class="table-th" style="width:100rpx">位置</view>
+            <view class="table-th" style="width:150rpx">{{peopleDetail.position}}</view>
+            <view class="table-th" style="width:100rpx">种族</view>
+            <view class="table-th" style="width:150rpx">{{peopleDetail.race[0]}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="table-tr">
+        <view class="sub_table">
+          <view class="sub-table-tr">
+            <view class="table-th" style="width:100rpx">特性</view>
+            <view class="table-th" style="width:400rpx">{{peopleDetail.feature}}</view>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
 
@@ -34,37 +56,71 @@
       <button class="choose_button" size="mini" bindtap="touchTalentImage">{{talentButton}}</button>
     </view>
   </view>
-  
+
   <view class="empty_area"></view>
   <view class="line"></view>
   <view class="empty_area"></view>
 
-  <view class="table" wx:if="{{talentState}}">
+  <view class="table" wx:if="{{talentState}}" style="width:100%">
     <view class="table-tr">
-      <view class="table-td">天赋名称 </view>
-      <view class="table-td">开放条件</view>
-      <view class="table-td">效果</view>
+      <view class="table-th" style="width:100rpx">天赋 </view>
+      <view class="table-th" style="width:100rpx">条件</view>
+      <view class="table-th" style="width:100rpx">效果</view>
     </view>
     <view class="table-tr" wx:for="{{talentList}}">
-      <view class="table-td">{{item.name}}</view>
-      <view class="table-td">{{item.quire}}</view>
-      <view class="table-td">{{item.desc}}</view>
+      <view class="table-th">{{item.name}}</view>
+      <view class="table-th">{{item.quire}}</view>
+      <view class="table-th">{{item.desc}}</view>
     </view>
   </view>
 
-  <view class="empty_area"></view>
-  <view class="line"></view>
-  <view class="empty_area"></view>
-
-<view class="unit_box">
+  <view class="unit_box">
     <view class="text_box">
       <text>技能信息</text>
     </view>
     <view class="empty_box"></view>
     <view class="button_box">
-      <button class="choose_button" size="mini" bindtap="touchTalentImage">{{talentButton}}</button>
+      <button class="choose_button" size="mini" bindtap="touchSkill">{{skillButton}}</button>
     </view>
   </view>
+
+  <view class="empty_area"></view>
+  <view class="line"></view>
+  <view class="empty_area"></view>
+
+
+  <scroll-view class="scroll-view_H" scroll-x="true" wx:if="{{skillState}}">
+    <view class="table" wx:for="{{skillList}}" wx:for-item="skill" style="margin-bottom:30rpx;">
+      <view class="table-tr">
+        <view class="sub_table">
+          <view class="sub-table-tr">
+            <view class="table-th" style="width:200rpx">名称</view>
+            <view class="table-th" style="width:300rpx">{{skill[0].name}}</view>
+            <view class="table-th" style="width:300rpx">{{skill[0].skillType}}</view>
+            <view class="table-th" style="width:300rpx">{{skill[0].spType}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="table-tr">
+        <view class="sub_table">
+          <view class="sub-table-tr">
+            <view class="table-th" style="width:75rpx">等级</view>
+            <view class="table-th" style="width:400rpx">描述</view>
+            <view class="table-th" style="width:75rpx">初始</view>
+            <view class="table-th" style="width:75rpx">消耗</view>
+            <view class="table-th" style="width:75rpx">持续</view>
+          </view>
+          <view class="sub-table-tr" wx:for="{{skill}}" wx:for-item="skillLevel" wx:for-index="idx">
+            <view class="table-th">{{idx+1}}</view>
+            <view class="table-th">{{skillLevel.desc}}</view>
+            <view class="table-th">{{skillLevel.initSp}}</view>
+            <view class="table-th">{{skillLevel.spCost}}</view>
+            <view class="table-th">{{skillLevel.duration}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
 
   <view class="unit_box">
     <view class="text_box">
@@ -72,51 +128,69 @@
     </view>
     <view class="empty_box"></view>
     <view class="button_box">
-      <button class="choose_button" size="mini" bindtap="touchTalentImage">{{talentButton}}</button>
+      <button class="choose_button" size="mini" bindtap="touchBaseInfo">{{baseInfoButton}}</button>
     </view>
   </view>
 
 
-  <view class="table">
-    <view class="table-tr">
-      <view class="table-td"> </view>
-      <view class="table-td">精英1满级</view>
-      <view class="table-td">精英2满级</view>
-      <view class="table-td">信赖加成</view>
+  <view class="empty_area"></view>
+  <view class="line"></view>
+  <view class="empty_area"></view>
+
+  <scroll-view class="scroll-view_H" scroll-x="true" wx:if="{{baseInfoState}}">
+    <view class="table">
+      <view class="table-tr">
+        <view class="table-th"> </view>
+        <view class="table-th" wx:for="{{baseInfoList}}">{{item.level}}</view>
+      </view>
+      <view class="table-tr">
+        <view class="table-th">生命上限</view>
+        <view class="table-th" wx:for="{{baseInfoList}}">{{item.maxHp}}</view>
+      </view>
+      <view class="table-tr">
+        <view class="table-th">攻击</view>
+        <view class="table-th" wx:for="{{baseInfoList}}">{{item.atk}}</view>
+      </view>
+      <view class="table-tr">
+        <view class="table-th">防御</view>
+        <view class="table-th" wx:for="{{baseInfoList}}">{{item.def}}</view>
+      </view>
+      <view class="table-tr">
+        <view class="table-th">法术抗性</view>
+        <view class="table-th" wx:for="{{baseInfoList}}">{{item.magicResistance}}</view>
+      </view>
     </view>
-    <view class="table-tr">
-      <view class="table-td">生命上限</view>
-      <view class="table-td">{{peopleDetail.phases[1].attributesKeyFrames[1].data.maxHp}}</view>
-      <view class="table-td">{{peopleDetail.phases[2].attributesKeyFrames[1].data.maxHp}}</view>
-      <view class="table-td">{{peopleDetail.favorKeyFrames[1].data.maxHp}}</view>
+  </scroll-view>
+
+  <view class="unit_box">
+    <view class="text_box">
+      <text>技能升级消耗</text>
     </view>
-    <view class="table-tr">
-      <view class="table-td">攻击</view>
-      <view class="table-td">{{peopleDetail.phases[1].attributesKeyFrames[1].data.atk}}</view>
-      <view class="table-td">{{peopleDetail.phases[2].attributesKeyFrames[1].data.atk}}</view>
-      <view class="table-td">{{peopleDetail.favorKeyFrames[1].data.atk}}</view>
+    <view class="empty_box"></view>
+    <view class="button_box">
+      <button class="choose_button" size="mini" bindtap="touchBaseSkillLevelUpCostButton">{{baseSkillLevelUpCostButton}}</button>
     </view>
+  </view>
+
+
+  <view class="empty_area"></view>
+  <view class="line"></view>
+  <view class="empty_area"></view>
+
+  <view class="table" wx:if="{{baseSkillLevelUpCostState}}">
     <view class="table-tr">
-      <view class="table-td">防御</view>
-      <view class="table-td">{{peopleDetail.phases[1].attributesKeyFrames[1].data.def}}</view>
-      <view class="table-td">{{peopleDetail.phases[2].attributesKeyFrames[1].data.def}}</view>
-      <view class="table-td">{{peopleDetail.favorKeyFrames[1].data.def}}</view>
+      <view class="table-th">等级</view>
+      <view class="table-th">消耗</view>
     </view>
-    <view class="table-tr">
-      <view class="table-td">法术抗性</view>
-      <view class="table-td">{{peopleDetail.phases[1].attributesKeyFrames[1].data.magicResistance}}</view>
-      <view class="table-td">{{peopleDetail.phases[2].attributesKeyFrames[1].data.magicResistance}}</view>
-      <view class="table-td">{{peopleDetail.favorKeyFrames[1].data.magicResistance}}</view>
+    <view class="table-tr" wx:for="{{baseSkillLevelUpCostList}}" wx:for-item="levelCost">
+      <view class="table-th" style="height=50rpx">{{levelCost[0].level}}</view>
+      <view class="table-th">
+      <view class="item_box" wx:for="{{levelCost}}">
+      <text class="item_text">{{item.name}}</text>
+      <image src="{{item.url}}" class="item_image"></image>
+      <text class="item_text">{{'x'+item.count}}</text>
+      </view>
+      </view>
     </view>
   </view>
 </view>
-<!-- <view class="line"></view>
-<view class="unit_box">
-  <view class="text_box">
-    <text>立绘</text>
-  </view>
-  <view class="empty_box"></view>
-  <view class="button_box">
-    <button class="choose_button" size="mini">展开</button>
-  </view>
-</view> -->

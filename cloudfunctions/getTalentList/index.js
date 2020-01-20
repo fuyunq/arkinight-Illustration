@@ -26,7 +26,10 @@ exports.main = async(event, context) => {
         for(let j=0;j<c.length;j++){
           let item = new Object();
           item.name = c[j].name;
-          item.desc = c[j].description.replace('<@ba.talpu>','').replace('</>','');
+          let test = c[j].description;
+          item.desc = test.replace(/<@ba.talpu>/gi, ' ').replace(/<\/>/gi, "");
+          item.index = test.indexOf('<@ba.talpu>');
+          item.test = test;
           let quire ='';
           let level = c[j].unlockCondition.level;
           if (level!=null&&level!=1){

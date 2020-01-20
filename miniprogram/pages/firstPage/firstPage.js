@@ -174,6 +174,11 @@ Page({
   },
   touchPeople:function(event){
       console.log(event);
+    let item = event.currentTarget.dataset.item;
+    wx.setStorage({
+      key: "currentPeople",
+      data: item
+    })
       let sortId = event.currentTarget.dataset.name;
     let icon = event.currentTarget.dataset.icon;
       wx.navigateTo({
