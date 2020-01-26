@@ -91,6 +91,7 @@ Page({
                   imgList.push(res.data[0].stage2)
               }
               
+              console.log(imgList);
               this.setData({
                   peopleImageList: imgList,
                   name: cn
@@ -168,6 +169,12 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  touchPeopleImage:function(event){
+      wx.previewImage({
+          current: this.data.peopleImageList[0],   //当前图片地址
+          urls: this.data.peopleImageList       //所有要预览的图片的地址集合 数组形式
+      })
   },
   touchTalentImage: function() {
     if (this.data.talentState) {

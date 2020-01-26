@@ -1,6 +1,6 @@
 <view class="default_view">
   <view class="table">
-    <view class="table-th" style="width:250rpx;height:210rpx;">
+    <view class="table-th" style="width:250rpx;height:210rpx;" bindtap="touchPeopleImage">
       <image src="{{icon}}" class="icon_img"></image>
       <!-- <text style="font-size:30rpx;">点击查看大图</text> -->
     </view>

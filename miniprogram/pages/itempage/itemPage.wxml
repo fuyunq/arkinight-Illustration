@@ -1,2 +1,11 @@
 <!--miniprogram/pages/itempage/itemPage.wxml-->
-<text>miniprogram/pages/itempage/itemPage.wxml</text>
+
+<view class="container_rule">
+<view wx:for="{{itemList}}" wx:key="name" class="unit_container"  bindtap="touchItem"
+ data-name="{{item.name}}" data-url="{{item.url}}">
+<image src="{{item.url}}" class="icon_img"></image>
+<text>{{item.name}}</text>
+</view>
+</view>
+
+

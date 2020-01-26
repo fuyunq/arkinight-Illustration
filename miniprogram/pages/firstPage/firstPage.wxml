@@ -1,8 +1,6 @@
-<!--miniprogram/pages/firstPage/firstPage.wxml-->
+
 <view class="container_rule">
-<!-- <view wx:for="{{buttonList}}" class="button_rule">
-<button type="primary">"{{item.name}}"</button>
-</view> -->
+
 <view class="choose_button_box">
 <button class="choose_button" wx:for="{{classList}}" data-name="{{item}}" bindtap="chooseClass">{{item}}</button>
 </view>

@@ -29,7 +29,7 @@ exports.main = async(event, context) => {
     baseSkillUpCostList
   };
 }
-async function getBaseSkillUpCostList(allSkillLvlup, skills) {
+async function getBaseSkillUpCostList(allSkillLvlup) {
   let baseSkillCostList = [];
   let itemList = [];
   for (let i = 0; i < allSkillLvlup.length; i++) {
@@ -39,15 +39,15 @@ async function getBaseSkillUpCostList(allSkillLvlup, skills) {
       itemList.push(item.id);
     }
   }
-  for(let skill of skills){
-    let levelUpCostCond = skill.levelUpCostCond;
-    for (let levelUpCostList of levelUpCostCond){
-      let levelUpCost = levelUpCostList.levelUpCost;
-      for (let item of levelUpCost){
-        itemList.push(item.id);
-      }
-    }
-  }
+//   for(let skill of skills){
+//     let levelUpCostCond = skill.levelUpCostCond;
+//     for (let levelUpCostList of levelUpCostCond){
+//       let levelUpCost = levelUpCostList.levelUpCost;
+//       for (let item of levelUpCost){
+//         itemList.push(item.id);
+//       }
+//     }
+//   }
   let itemInfoList = await getItemList(itemList);
   let itemMap = new Map();
   for (let itemInfo of itemInfoList) {

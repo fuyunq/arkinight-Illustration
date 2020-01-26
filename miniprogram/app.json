@@ -1,34 +1,35 @@
 {
-  "pages": [
-    "pages/firstPage/firstPage",
-    "pages/peopleDetail/peopleDetail",
-    "pages/filterPage/filterPage",
-    "pages/itempage/itemPage"
-  ],
-  "tabBar": {
-    "backgroundColor": "#F7F7FA",
-    "borderStyle": "white",
-    "list": [
-      {
-        "pagePath": "pages/firstPage/firstPage",
-        "text": "干员",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-selected.png"
-      },
-      {
-        "pagePath": "pages/itempage/itemPage",
-        "text": "素材",
-        "iconPath": "images/search.png",
-        "selectedIconPath": "images/search-selected.png"
-      }
-    ]
-  },
-  "window": {
-    "backgroundColor": "#FFFFFF",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FFFFFF",
-    "navigationBarTitleText": "明日方舟图鉴",
-    "navigationBarTextStyle": "black"
-  },
-  "sitemapLocation": "sitemap.json"
+    "pages": [
+        "pages/firstPage/firstPage",
+        "pages/peopleDetail/peopleDetail",
+        "pages/filterPage/filterPage",
+        "pages/itempage/itemPage",
+        "pages/itemDetail/itemDetail"
+    ],
+    "tabBar": {
+        "backgroundColor": "#F7F7FA",
+        "borderStyle": "white",
+        "list": [
+            {
+                "pagePath": "pages/firstPage/firstPage",
+                "text": "干员",
+                "iconPath": "images/home.png",
+                "selectedIconPath": "images/home-selected.png"
+            },
+            {
+                "pagePath": "pages/itempage/itemPage",
+                "text": "素材",
+                "iconPath": "images/search.png",
+                "selectedIconPath": "images/search-selected.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundColor": "#FFFFFF",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#FFFFFF",
+        "navigationBarTitleText": "明日方舟图鉴",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
 }

@@ -5,22 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+      itemList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      var that = this;
     wx.cloud.callFunction({
       // 云函数名称
-      name: 'getItemList',
+      name: 'getItemNameList',
       // 传给云函数的参数
       data: {
       },
       success: function (res) {
         console.log(res);
-        
+        that.setData({
+            itemList: res.result
+        })
       },
       fail: console.error
     })
@@ -73,5 +76,13 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  touchItem:function(event){
+      let name =event.currentTarget.dataset.name;
+      let url = event.currentTarget.dataset.url;
+      console.log(event);
+      wx.navigateTo({
+          url: "../../pages/itemDetail/itemDetail?name=" + name + '&url=' + url,
+      });
   }
 })
