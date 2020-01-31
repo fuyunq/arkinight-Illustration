@@ -24,9 +24,17 @@ Page({
     skillList: [],
     baseSkillLevelUpCostList:[],
     baseSkillLevelUpCostButton: '展开',
-    baseSkillLevelUpCostState:false
-    
-
+    baseSkillLevelUpCostState:false,
+    peopleStoryList:[],
+    peopleStoryListButton:'展开',
+    peopleStoryListState:false,
+      rangeList: [],
+      rangeButton: '展开',
+      rangeState: false,
+      test:{'title':'hahha','showState':true},
+      buttonList:[],
+      dataTableList:[],
+      newPeopleDetail:{},
   },
 
   /**
@@ -53,6 +61,14 @@ Page({
         })
       }
     });
+      wx.getStorage({
+          key: 'peopleDetailList',
+          success(res) {
+              that.setData({
+                  dataTableList: res.data
+              })
+          }
+      });
     
   },
 
@@ -60,6 +76,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
+      
       let cn = this.data.name;
       const db = wx.cloud.database({
           env: 'test1-s9ptf'
@@ -91,7 +108,7 @@ Page({
                   imgList.push(res.data[0].stage2)
               }
               
-              console.log(imgList);
+
               this.setData({
                   peopleImageList: imgList,
                   name: cn
@@ -119,13 +136,63 @@ Page({
               name: this.data.name
           }
       }).then(res => {
-        console.log(res);
+
           this.setData({
               skillList: res.result.skillList,
               baseInfoList: res.result.baseInfoList,
             baseSkillLevelUpCostList: res.result.baseSkillUpCostList
           })
-        console.log(this.data.baseSkillLevelUpCostList);
+      })
+
+      wx.cloud.callFunction({
+          // 云函数名称
+          name: 'getNewDetail',
+          // 传给云函数的参数
+          data: {
+              name: this.data.name
+          }
+      }).then(res => {
+          
+          this.setData({
+              newPeopleDetail:res.result[0]
+          })
+          console.log(this.data.newPeopleDetail);
+      })
+
+      wx.cloud.callFunction({
+          // 云函数名称
+          name: 'getPeopleStoryList',
+          // 传给云函数的参数
+          data: {
+              name: this.data.name
+          }
+      }).then(res => {
+          
+          this.setData({
+              peopleStoryList: res.result
+          })
+
+      })
+
+      wx.cloud.callFunction({
+          // 云函数名称
+          name: 'getPeopleDetail',
+          // 传给云函数的参数
+          data: {
+              name: this.data.name
+          }
+      }).then(res => {
+          let dataTableList = this.data.dataTableList;
+          let peopleDetail = res.result.peopleDetail;
+          
+          for (let i = 0; i < peopleDetail.length;i++){
+              dataTableList[i].tableData = peopleDetail[i];
+          }
+          
+          this.setData({
+              dataTableList: dataTableList
+          })
+          console.log(this.data.dataTableList);
       })
   },
 
@@ -228,5 +295,27 @@ Page({
         baseSkillLevelUpCostButton: '收起'
       })
     }
-  }
+  },
+    touchPeopleStoryButton: function () {
+        if (this.data.peopleStoryListState) {
+            this.setData({
+                peopleStoryListState: !this.data.peopleStoryListState,
+                peopleStoryListButton: '展开'
+            })
+        } else {
+            this.setData({
+                peopleStoryListState: !this.data.peopleStoryListState,
+                peopleStoryListButton: '收起'
+            })
+        }
+    },
+    touchButton: function (event){
+        console.log(event);
+        let idx = event.currentTarget.dataset.index;
+        let ownDataTableList = this.data.dataTableList;
+        ownDataTableList[idx].showState = !ownDataTableList[idx].showState;
+        this.setData({
+            dataTableList: ownDataTableList
+        })
+    }
 })

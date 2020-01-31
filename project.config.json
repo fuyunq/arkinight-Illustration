@@ -3,11 +3,21 @@
 	"cloudfunctionRoot": "cloudfunctions/",
 	"setting": {
 		"urlCheck": true,
-		"es6": true,
+		"es6": false,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"enhance": true
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"appid": "wx84b741dbb4069d20",
 	"projectname": "miniprogram-2",

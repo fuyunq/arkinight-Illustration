@@ -27,6 +27,11 @@
   border-radius: 35rpx;
   background-color: #9cc;
 }
+.skill_icon{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0rpx 10rpx 0rpx 10rpx;
+}
 
 /* .table {
   margin: 0 auto;
@@ -58,7 +63,7 @@
   border: 3rpx solid gray;
   text-align: center;
   vertical-align: middle;
-  background-color: #e5e5e5;
+  background-color: #99CCCC;
   padding: 0;
 }
 
@@ -143,6 +148,26 @@ background-color:white;
 .item_text{
   text-align: center;
   line-height:120rpx;
+}
+.black_box{
+    border: 1rpx solid black;
+    margin: 3rpx;
+    width: 44rpx;
+    height: 44rpx;
+    background: white
+}
+.blue_box{
+    margin: 3rpx;
+    width: 47rpx;
+    height: 47rpx;
+    background: blue
+}
+.empty_range_box{
+    border: 1rpx solid white;
+    margin:3rpx;
+    width: 44rpx;
+    height: 44rpx;
+    background: white
 }
 
 

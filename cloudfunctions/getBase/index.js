@@ -39,15 +39,6 @@ async function getBaseSkillUpCostList(allSkillLvlup) {
       itemList.push(item.id);
     }
   }
-//   for(let skill of skills){
-//     let levelUpCostCond = skill.levelUpCostCond;
-//     for (let levelUpCostList of levelUpCostCond){
-//       let levelUpCost = levelUpCostList.levelUpCost;
-//       for (let item of levelUpCost){
-//         itemList.push(item.id);
-//       }
-//     }
-//   }
   let itemInfoList = await getItemList(itemList);
   let itemMap = new Map();
   for (let itemInfo of itemInfoList) {
