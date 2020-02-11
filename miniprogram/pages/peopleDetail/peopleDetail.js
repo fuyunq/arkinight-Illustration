@@ -28,6 +28,8 @@ Page({
     peopleStoryList:[],
     peopleStoryListButton:'展开',
     peopleStoryListState:false,
+    buildSkillState:false,
+    voiceTextState:false,
       rangeList: [],
       rangeButton: '展开',
       rangeState: false,
@@ -67,6 +69,8 @@ Page({
               that.setData({
                   dataTableList: res.data
               })
+              
+              console.log(JSON.stringify(that.data.dataTableList));
           }
       });
     
@@ -192,7 +196,7 @@ Page({
           this.setData({
               dataTableList: dataTableList
           })
-          console.log(this.data.dataTableList);
+          console.log(JSON.stringify(this.data.dataTableList));
       })
   },
 
@@ -283,19 +287,19 @@ Page({
       })
     }
   },
-  touchBaseSkillLevelUpCostButton:function(){
-    if (this.data.baseSkillLevelUpCostState) {
-      this.setData({
-        baseSkillLevelUpCostState: !this.data.baseSkillLevelUpCostState,
-        baseSkillLevelUpCostButton: '展开'
-      })
-    } else {
-      this.setData({
-        baseSkillLevelUpCostState: !this.data.baseSkillLevelUpCostState,
-        baseSkillLevelUpCostButton: '收起'
-      })
-    }
-  },
+//   touchBaseSkillLevelUpCostButton:function(){
+//     if (this.data.baseSkillLevelUpCostState) {
+//       this.setData({
+//         baseSkillLevelUpCostState: !this.data.baseSkillLevelUpCostState,
+//         baseSkillLevelUpCostButton: '展开'
+//       })
+//     } else {
+//       this.setData({
+//         baseSkillLevelUpCostState: !this.data.baseSkillLevelUpCostState,
+//         baseSkillLevelUpCostButton: '收起'
+//       })
+//     }
+//   },
     touchPeopleStoryButton: function () {
         if (this.data.peopleStoryListState) {
             this.setData({
@@ -309,8 +313,18 @@ Page({
             })
         }
     },
+    touchBuildSkill:function(){
+        this.setData({
+            buildSkillState:!this.data.buildSkillState
+        })
+    },
+    touchVoiceText: function () {
+        this.setData({
+            voiceTextState: !this.data.voiceTextState
+        })
+    },
     touchButton: function (event){
-        console.log(event);
+
         let idx = event.currentTarget.dataset.index;
         let ownDataTableList = this.data.dataTableList;
         ownDataTableList[idx].showState = !ownDataTableList[idx].showState;
@@ -318,4 +332,5 @@ Page({
             dataTableList: ownDataTableList
         })
     }
+
 })

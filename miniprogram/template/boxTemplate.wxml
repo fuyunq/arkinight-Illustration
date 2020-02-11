@@ -1,22 +1,32 @@
 <template name="table_data">
     <view class="table" style="width:100%" wx:for="{{tableList}}" wx:for-item="singleTable">
         <view class="table-tr" wx:for="{{singleTable.list}}" wx:for-index="idx" wx:for-item="row">
-        <view class="table-th" wx:for="{{row}}" style="background:{{idx%2==1?'white':''}};min-width:{{item.min}}rpx">
-        <view wx:if="{{item.templateType==1}}"  >
-        <view wx:for="{{item.levelCost}}" class="item_box" wx:for-item="level">
-<text class="item_text">{{level.name}}</text>
-                    <image src="{{level.url}}" class="item_image"></image>
-                    <text class="item_text">{{'x'+level.count}}</text>
-        </view>      
-        </view>
-        <text wx:else>{{item.text}}</text>
-        </view>
+            <view class="table-th" wx:for="{{row}}" style="background:{{idx%2==1?'#FFFFCC':''}};min-width:{{item.min}}rpx">
+                <view wx:if="{{item.templateType==1}}">
+                    <view wx:for="{{item.levelCost}}" class="item_box" wx:for-item="level">
+                        <text class="item_text">{{level.name}}</text>
+                        <image src="{{level.url}}" class="item_image"></image>
+                        <text class="item_text">{{'x'+level.count}}</text>
+                    </view>
+                </view>
+                <text wx:else>{{item.text}}</text>
+            </view>
         </view>
     </view>
 </template>
 
 <template name="buttonList">
-<view class="unit_box">
+
+    <view class="unit_box" wx:if="{{index%2==0}}">
+        <view class="text_box">
+            <text>{{title}}</text>
+        </view>
+        <view class="empty_box"></view>
+        <view class="button_box">
+            <button class="choose_button" size="mini" bindtap="touchButton" data-index="{{index}}">{{showState?'收起':'展开'}}</button>
+        </view>
+    </view>
+    <view class="dis_unit_box" wx:if="{{index%2==1}}">
         <view class="text_box">
             <text>{{title}}</text>
         </view>

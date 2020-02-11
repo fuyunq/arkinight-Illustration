@@ -65,6 +65,7 @@
   vertical-align: middle;
   background-color: #99CCCC;
   padding: 0;
+  min-width: 100rpx;
 }
 
 .table-td {
@@ -102,6 +103,13 @@
     display: flex;
     width: 750rpx;
     flex-flow: wrap;
+    background-color: #99CCCC;
+}
+.dis_unit_box{
+    display: flex;
+    width: 750rpx;
+    flex-flow: wrap;
+    background-color: #FFFFCC;
 }
 .button_box{
     width: 200rpx;
